@@ -34,4 +34,5 @@ async function main() {
 
 document.addEventListener("DOMContentLoaded", () => {
     main();
+    setInterval(main, 3600000); // Will refresh every hour
   });

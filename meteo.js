@@ -22,11 +22,14 @@ async function getWeather(city, apiKey) {
 async function main() {
     const config = await getConfig();
 
-    document.getElementById("city").innerHTML = config.city;
-    
     weather = await getWeather(config.city, config.apiKey);
     
-    document.getElementById("temperature").innerHTML = weather.main.temp + " °C";
+    document.getElementById("city").innerHTML = `${weather.name} (${weather.sys.country})`;
+    document.getElementById("description").innerHTML = `${weather.weather[0].description}`;
+    document.getElementById("temperature").innerHTML = `Température ${weather.main.temp} °C`;
+    document.getElementById("feelslike").innerHTML = `Ressentie ${weather.main.feels_like} °C`;
+    document.getElementById("humidity").innerHTML = `Humidité ${weather.main.humidity}%`;
+    document.getElementById("wind").innerHTML = `Vent ${weather.wind.speed} m/s`;
 }
 
 document.addEventListener("DOMContentLoaded", () => {

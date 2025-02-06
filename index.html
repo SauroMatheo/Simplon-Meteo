@@ -8,10 +8,16 @@
     <script src="meteo.js"></script>
 </head>
 <body>
-    <h1>Infos Météo</h1>
-    <div>
+    <div class="cardWrapper">
+        <h1>Infos Météo</h1>
         <p id="city">Chargement de la ville...</p>
-        <p id="temperature">Chargement de la température...</p>
+        <p id="description">...</p>
+        <div class="infoWrapper">
+            <p class="infoCell" id="temperature">Température ... °C</p>
+            <p class="infoCell" id="feelslike">Ressentie ... °C</p>
+            <p class="infoCell" id="humidity">Humidité ...%</p>
+            <p class="infoCell" id="wind">Vent ... m/s</p>
+        </div>
     </div>
 </body>
 </html>
